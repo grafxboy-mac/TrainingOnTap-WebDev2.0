@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework Calc</title>
+    </head>
+    <body>
+        <label>Celsius</label>
+        <input type="number" id="Celsius"  onkeyup="convertC()"/>
+        <br>
+        <br>
+        <label>Fahrenheit</label>
+        <input type="number" id="Fahrenheit"  onkeyup="convertF()"/>
+        <br>
+        <br>
+
+        <script type="text/javascript">
+
+            function convertF(){
+
+                var userInputF = document.getElementById("Fahrenheit").value;
+                document.getElementById("Celsius").value = toCelsius(userInputF);
+
+            }
+            function convertC(){
+
+                var userInputC = document.getElementById("Celsius").value;
+                document.getElementById("Fahrenheit").value = toFahrenheit(userInputC);
+
+            }
+
+            function toFahrenheit(tempC){
+                var calcF = (tempC*(9/5)) + 32;
+                return Math.round( calcF );
+
+            }
+
+            function toCelsius(tempF){
+                var calcC = (5/9) * (tempF-32);
+                return Math.round( calcC );
+
+            }
+
+        </script>
+    </body>
+</html>
